@@ -423,7 +423,10 @@ class TrainValDataset(Dataset):
         nc, msg = 0, ""
         try:
             im = Image.open(im_file)
-            im.verify()  # PIL verify
+            """
+            Don't uncomment im.verify()
+            """
+            #im.verify()  # PIL verify
             shape = im.size  # (width, height)
             im_exif = im._getexif()
             if im_exif and ORIENTATION in im_exif:
